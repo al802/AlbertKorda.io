@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+ 
+
+
+<p>
+<h1>Programowanie obiektowe  <br>
+Zadanie 24.</h1><br>
+<b>1. Rodzaje „filozofii” programowania.</b><br>
+Istnieje programowanie obiektowe i strukturalne.<br>
+<b>2. Opisz paradygmat programowania strukturalnego. Założenia programowania strukturalnego.</b><br>
+Programowanie strukturalne zakłada wykonanie tworzenie i wyświetlenie treści od początku do końca po kolei, korzysta z pętli i rzadko wykonuje instrukcje skoku.<br>
+<b>3. Programowanie obiektowe definicja(angielski skrót, obiekty, stan, zachowanie, końcowa konkluzja czym jest programowanie obiektowe).</b><br>
+ ang. object-oriented programming <br>
+Programowanie obiektowe zakłada tworzenie klas i obiektów w kodzie, w oparciu o prawdziwe życie. Obiekty mają zdefiniowane metody które zachowują się jak funkcje wykonujące pewne czynności w obiekcie, i pola(zmienne) będące opisem pewnych wartości obiektu.<br>
+<b>4. Dlaczego stosujemy programowanie obiektowe?</b><br>
+Programowanie obiektowe stosuje się ze względu na:<br>
+lepsze gospodarowanie pamięcią<br>
+większa uniwersalność w porównaniu do programowania strukturalnego<br>
+Programowanie obiektowe umożliwia nieograniczone wykorzystywnanie klas napisanych przez innych ludzi.<br>
+Programowanie obiektowe lepiej odwzorowuje rzeczywistość dzięki czemu łatwiej jest zrozumieć logikę wewnątrz programu i dostosować go do prawdziwych potrzeb.<br>
+<b>5. Omów następujące pojęcia ( w krótkiej formie),</b><br>
+<b>Klasa</b><br>
+Klasa definiuje ramy znajdujących się w niej obiektów <br>
+<b>Obiekt</b><br>
+Właściwość<br>
+parametr opisujący obiekt np 13kg<br>
+<b>Metoda</b><br>
+funkcja wykonująca określoną czynnośc w obiekcie<br>
+<b>Konstruktor</b><br>
+Konstruktor to metoda tworząca obiekt, i nadająca wszystkie jego właściwości i metody<br>
+<b>Dziedziczenie</b><br>
+Dziedziczenie oznacza pobieranie właściwości metod i innych parametrów klas od innych klas<br>
+<b>Hermetyzacja</b><br>
+Hermetyzacja to działanie dążące do odcięcia wewnętrznej treści klasy od reszty wirtualnego środowiska.<br>
+<b>Polimorfizm</b><br>
+Polimorfizm to zmiana zachowania obiektu w zależności od okoliczności i określonych zmiennych<br>
+<br>
+<br>
+<h1>Zadanie 25.</h1><br>
+Udziel odpowiedzi na następujące pytania teoretyczne:<br>
+<b>1. W jaki sposób można określić właściwość danego obiektu ( dwa sposoby wraz z
+przykładami)? (odpowiedź poniżej)</b><br>
+Sposob 1<br>
+Używając zapisu:<br>
+nazwa_obiektu.nazwa_właściwości="tekst";<br>
+np.
+deska.firma="czarny dab deskplex";<br>
+Sposob 2<br>
+używając zapisu postaci:
+nazwa_obiektu[nazwa_właściwości];
+np. brzoza[cena]=250;<br>
+<b>2. W jaki sposób można odwołać się do pól (właściwości) i metod? </b>
+Przed ich nazwą trzeba umieścić nazwę obiektu, którego są elementami<br>
+(np. zmienną, która przechowuje dany obiekt), i kropkę.<br>
+np. console.log(deska1.kolor); wyświetla kolor obiektu deska1<br>
+<b>3. Wymień cechy charakterystyczne konstruktora.</b>
+*jest wywoływany (uruchamiany) automatycznie w chwili tworzenia obiektu danej klasy - na rzecz tego obiektu,<br>
+*nazywa się tak samo jak klasa,<br>
+*nie zwraca żadnej wartości ,<br>
+*może przyjmować argumenty - tak jak zwykła funkcja czy metoda, aby następnie powołać do życia obiekt za pomocą operatora new.<br>
+<b>4. Konstruowanie obiektu na podstawie przykładuobiekt ma trzy pola oraz jedną metodę.</b><br>
+"var osoba_1 =<br>
+{<br>
+nazwisko : ‘Kowalski’,<br>
+imie :’Jan’,<br>
+zawod :’piekarz’,<br>
+wyświetl :function ()<br>
+{<br>
+Document.write(this.nazwisko + ‘ ‘ + this.imie)<br>
+}<br>
+}"<br>
+<b>5. Znaczenie słowa this. Jak oddzielamy pola oraz metody? </b><br>
+Slowo this pozwala nam na odwołanie się do pola/metody obiektu z wnętrza tego obiektu<br>
+<b>6. Konstruktor w JS na podstawie przykładu wraz z opisem.</b><br>
+"function klient(nazwisko_k,imie_k,zawod_k)<br>
+{<br>
+this.nazwisko=nazwisko_k;<br>
+this.imie=imie_k;<br>
+this.zawod=zawod_k;<br>
+wypisz = function ()<br>
+{<br>
+alert(this.nazwisko + ' ' + this.imie)<br>
+}<br>
+}"<br>
+<b>7. Znaczenie słowa kluczowego New wraz z przykładem.</b><br>
+słowo kluczowe <b>new</b> służy do tworzenia nowego obiektu na podstawie konstruktora<br>
+Przykład<br>
+var czlowiek1 = new klient('Kowalski', 'Jan', 'kierowca');<br>
+var czlowiek2 = new klient('Nowak', 'Anna', 'sekretarka');<br>
+<b>8. Znaczenie słowa kluczowego prototype wraz z przykładem i opisem ( szczególnie ważny
+tekst pogrubiony).</b><br>
+<b>Prototype</b> to słowo kluczowe stosowane do definiowania metod i właściwości dla obiektu<br>
+Przykład<br>
+"function osoba()<br>
+{<br>
+this.nazwisko='Bielski';<br>
+this.imie='Paweł';<br>
+}<br>
+osoba.prototype.pisz_dane = function ()<br>
+{<br>
+document.write(this.nazwisko + ' ' + this.imie)<br>
+}<br>
+osoba.prototype.zawod = 'kierowca';<br>
+var czlowiek1 = new osoba();<br>
+czlowiek1.pisz_dane();"<br>
+
+<h1>Zadanie 26.</h1>
+Na podstawie Przykładu1 (poniżej), wykonaj program z użyciem programowania obiektowego.<br>
+Zdefiniuj obiekt, trzy właściwości z wpisanymi danymi, jedną metodę wyświetlającą wartości pól właściwości<br> (nazwa metody to nazwa obiekt_wyswietl_nazwisko_ucznia np.<br>
+samochod_wyswietl_kowalski).<br><br>
+<b>kod:</b><br>
+&lt;script type="text/javascript"><br>
+var monitor = {<br>
+marka: 'iiyama',<br>
+czestotliwosc: '75hz',<br>
+rozdzielczosc: '1980x1080',<br>
+Monitor: function ()<br>
+{<br>
+document.write(this.marka + ' ' + this.czestotliwosc)<br>
+}<br>
+}<br>
+monitor.Monitor();<br>
+&lt;/script><br>
+<br>
+<b>wynik:</b>
+<head><br>
+<script type="text/javascript">
+var monitor = {
+marka: 'iiyama',
+czestotliwosc: '75hz',
+rozdzielczosc: '1980x1080',
+Monitor: function ()
+{
+document.write(this.marka + ' ' + this.czestotliwosc)
+}
+}
+monitor.Monitor();
+</script>
+</head>
+
+
+
+<h1>Zadanie 27.</h1><br>
+Na podstawie Przykładu2 (poniżej), uzupełnij program z zadania przedniego (każdy uczeń miał inny obiekt) z użyciem programowania obiektowego.<br>
+Dopisz jedną właściwość (poza ciałem obiektu) z wpisaną daną, jedną metodę wyświetlającą wartości pola właściwości (dopisaną w zadaniu poprzednim),<br>
+nazwa metody to:<br>
+nazwa obiekt_pokaz_nazwisko_ucznia<br>
+np. samochod_pokaz_kowalski ( metoda dopisana poza ciałem obiektu).<br>
+<br><br>
+<b>kod:</b>
+&lt;head><br>
+&lt;script type="text/javascript"><br>
+var monitor = {<br>
+marka: 'iiyama',<br>
+czestotliwosc: '75hz',<br>
+rozdzielczosc: '1980x1080',<br>
+Monitor: function ()<br>
+{<br>
+document.write(this.marka + ' ' + this.czestotliwosc)<br>
+}<br>
+}<br>
+monitor.Monitor();<br>
+monitor.ratio="16:9";<br>
+monitor.wypisz=function() {alert('aspect ratio= ' + this.ratio)}<br>
+monitor.wypisz();<br>
+&lt;/script><br>
+&lt;/head><br>
+
+
+<script type="text/javascript">
+var monitor = {
+marka: 'iiyama',
+czestotliwosc: '75hz',
+rozdzielczosc: '1980x1080',
+Monitor: function ()
+{
+document.write(this.marka + ' ' + this.czestotliwosc)
+}
+}
+monitor.Monitor();
+monitor.ratio="16:9";
+monitor.wypisz=function() {alert('aspect ratio= ' + this.ratio)}
+monitor.wypisz();
+</script>
+
+<script type="text/javascript">
+
+class Monitor {
+constructor(){
+this.marka = iiyama;
+this.czestotliwosc = 75;
+this.rozdzielczosc = 1980x1080;
+
+}
+
+
+
+
+}
+
+</script>
+
+
+
+
+</body>
+</html> 
